@@ -15,7 +15,7 @@ int main()
 #endif
 
     int t = 1;
-    /*is Single Test case?*/ cin >> t;
+    cin >> t;
     while (t--)
     {
         solve();
@@ -27,5 +27,16 @@ int main()
 }
 void solve()
 {
-    cout << (499993 / 2);
+    int s, temp, spend = 0;
+    cin >> s;
+    while (s >= 10)
+    {
+        temp = s / 10;
+        temp = temp * 10;
+        spend += temp;
+        s -= temp;
+        s += floor(double(temp) / 10);
+    }
+    spend += s;
+    cout << spend;
 }

@@ -15,7 +15,7 @@ int main()
 #endif
 
     int t = 1;
-    /*is Single Test case?*/ cin >> t;
+    //cin>>t;
     while (t--)
     {
         solve();
@@ -27,5 +27,26 @@ int main()
 }
 void solve()
 {
-    cout << (499993 / 2);
+    char ch;
+    cin >> ch;
+    string s, str = "qwertyuiopasdfghjkl;zxcvbnm,./", res;
+    cin >> s;
+
+    if (ch == 'L')
+    {
+        for (int i = 0; i < s.length(); i++)
+        {
+            int idx = str.find(s[i]);
+            res.push_back(str[idx + 1]);
+        }
+    }
+    else
+    {
+        for (int i = 0; i < s.length(); i++)
+        {
+            int idx = str.find(s[i]);
+            res.push_back(str[idx - 1]);
+        }
+    }
+    cout << res;
 }

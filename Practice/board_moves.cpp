@@ -15,7 +15,7 @@ int main()
 #endif
 
     int t = 1;
-    /*is Single Test case?*/ cin >> t;
+    cin >> t;
     while (t--)
     {
         solve();
@@ -27,5 +27,11 @@ int main()
 }
 void solve()
 {
-    cout << (499993 / 2);
+    long long int n, moves = 0;
+    cin >> n;
+    for (long long int i = 1; i <= n / 2; i++)
+    {
+        moves += i * (8 * i);
+    }
+    cout << moves;
 }

@@ -15,7 +15,7 @@ int main()
 #endif
 
     int t = 1;
-    /*is Single Test case?*/ cin >> t;
+    //cin>>t;
     while (t--)
     {
         solve();
@@ -27,5 +27,15 @@ int main()
 }
 void solve()
 {
-    cout << (499993 / 2);
+    int n, min = INT_MAX, sum = 0;
+    cin >> n;
+    int a[n], p[n];
+    for (int i = 0; i < n; i++)
+    {
+        cin >> a[i] >> p[i];
+        if (min > p[i])
+            min = p[i];
+        sum += min * a[i];
+    }
+    cout << sum;
 }

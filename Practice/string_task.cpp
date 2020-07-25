@@ -15,7 +15,7 @@ int main()
 #endif
 
     int t = 1;
-    /*is Single Test case?*/ cin >> t;
+    //cin>>t;
     while (t--)
     {
         solve();
@@ -27,5 +27,19 @@ int main()
 }
 void solve()
 {
-    cout << (499993 / 2);
+    string str, res;
+
+    cin >> str;
+    transform(str.begin(), str.end(), str.begin(), ::tolower);
+    for (int i = 0; i < str.length(); i++)
+    {
+        if (str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'u' || str[i] == 'y')
+            continue;
+        else
+        {
+            res.push_back('.');
+            res.push_back(str[i]);
+        }
+    }
+    cout << res;
 }

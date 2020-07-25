@@ -15,7 +15,7 @@ int main()
 #endif
 
     int t = 1;
-    /*is Single Test case?*/ cin >> t;
+    //cin>>t;
     while (t--)
     {
         solve();
@@ -27,5 +27,10 @@ int main()
 }
 void solve()
 {
-    cout << (499993 / 2);
+    int n, flag = 0;
+    cin >> n;
+    if (n % 4 == 0 || n % 7 == 0 || n % 47 == 0 || n % 74 == 0 || n % 447 == 0 || n % 477 == 0)
+        cout << "YES";
+    else
+        cout << "NO";
 }

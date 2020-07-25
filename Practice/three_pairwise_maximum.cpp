@@ -15,7 +15,7 @@ int main()
 #endif
 
     int t = 1;
-    /*is Single Test case?*/ cin >> t;
+    cin >> t;
     while (t--)
     {
         solve();
@@ -27,5 +27,20 @@ int main()
 }
 void solve()
 {
-    cout << (499993 / 2);
+    int a[3];
+    cin >> a[0] >> a[1] >> a[2];
+
+    sort(a, a + 3, greater<int>());
+    if (a[0] == a[1] && a[1] == a[2])
+    {
+        cout << "YES\n";
+        cout << a[0] << " " << a[1] << " " << a[2];
+    }
+    else if (a[0] == a[1])
+    {
+        cout << "YES\n";
+        cout << a[1] << " " << a[2] << " " << a[2];
+    }
+    else
+        cout << "NO";
 }

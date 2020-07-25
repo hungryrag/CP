@@ -15,7 +15,7 @@ int main()
 #endif
 
     int t = 1;
-    /*is Single Test case?*/ cin >> t;
+    //cin>>t;
     while (t--)
     {
         solve();
@@ -27,5 +27,16 @@ int main()
 }
 void solve()
 {
-    cout << (499993 / 2);
+    int a[3];
+    for (int i = 0; i < 3; i++)
+    {
+        cin >> a[i];
+    }
+    int b[4];
+    b[0] = a[0] + a[1] + a[2];
+    b[1] = (a[0] + a[1]) * a[2];
+    b[2] = a[0] * (a[1] + a[2]);
+    b[3] = a[0] * a[1] * a[2];
+    sort(b, b + 4, greater<int>());
+    cout << b[0];
 }

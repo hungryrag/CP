@@ -15,7 +15,7 @@ int main()
 #endif
 
     int t = 1;
-    /*is Single Test case?*/ cin >> t;
+    cin >> t;
     while (t--)
     {
         solve();
@@ -27,5 +27,19 @@ int main()
 }
 void solve()
 {
-    cout << (499993 / 2);
+    long long int a, b, c, d, count = 0;
+    cin >> a >> b >> c >> d;
+
+    if (b >= a)
+        cout << b;
+    else
+    {
+        if (c <= d)
+        {
+            cout << -1;
+            return;
+        }
+        count = ceil(double(a - b) / (c - d));
+        cout << (b + count * c);
+    }
 }

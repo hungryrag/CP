@@ -27,5 +27,25 @@ int main()
 }
 void solve()
 {
-    cout << (499993 / 2);
+    int n, flag = 0, c = 0, b = 0;
+    cin >> n;
+    string str;
+    cin >> str;
+
+    for (int i = 0; i < n; i++)
+    {
+        if (str[i] == '(')
+            flag = 1;
+        if (flag)
+        {
+            if (str[i] == '(')
+                b++;
+            else if (str[i] == ')')
+                b--;
+
+            if (b == 0)
+                flag = 0;
+        }
+    }
+    cout << b;
 }

@@ -15,7 +15,7 @@ int main()
 #endif
 
     int t = 1;
-    /*is Single Test case?*/ cin >> t;
+    //cin>>t;
     while (t--)
     {
         solve();
@@ -27,5 +27,18 @@ int main()
 }
 void solve()
 {
-    cout << (499993 / 2);
+    string str;
+    int n;
+    cin >> n;
+    cin >> str;
+    sort(str.begin(), str.end());
+    int one = 0, zero = 0;
+    for (int i = 0; i < n; i++)
+    {
+        if (str[i] == '0')
+            zero++;
+        else
+            one++;
+    }
+    cout << abs(one - zero);
 }

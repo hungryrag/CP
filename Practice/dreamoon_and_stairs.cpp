@@ -15,7 +15,7 @@ int main()
 #endif
 
     int t = 1;
-    /*is Single Test case?*/ cin >> t;
+    // cin >> t;
     while (t--)
     {
         solve();
@@ -27,5 +27,22 @@ int main()
 }
 void solve()
 {
-    cout << (499993 / 2);
+    int n, m, s = 0;
+    cin >> n >> m;
+
+    int min = ceil(float(n) / 2), max = n;
+    // for (int i = min; i <= max; i++)
+    // {
+    //     if (i % m == 0)
+    //     {
+    //         cout << i;
+    //         return;
+    //     }
+    // }
+
+    int res = ceil(float(min) / m) * m;
+    if (res > n)
+        cout << -1;
+    else
+        cout << res;
 }

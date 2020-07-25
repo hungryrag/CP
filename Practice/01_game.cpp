@@ -15,7 +15,7 @@ int main()
 #endif
 
     int t = 1;
-    /*is Single Test case?*/ cin >> t;
+    cin >> t;
     while (t--)
     {
         solve();
@@ -27,5 +27,24 @@ int main()
 }
 void solve()
 {
-    cout << (499993 / 2);
+    string str;
+    int count = 0, i = 0;
+    cin >> str;
+    while (str.length() > 0 && i < str.length())
+    {
+        //if (str[i] != str[i + 1])
+        if (str.substr(i, 2) == "01" || str.substr(i, 2) == "10")
+        {
+            str.erase(i, 2);
+            count++;
+            i = 0;
+        }
+        else
+            i++;
+    }
+
+    if (count % 2)
+        cout << "DA";
+    else
+        cout << "NET";
 }

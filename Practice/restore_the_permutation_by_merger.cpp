@@ -15,7 +15,7 @@ int main()
 #endif
 
     int t = 1;
-    /*is Single Test case?*/ cin >> t;
+    cin >> t;
     while (t--)
     {
         solve();
@@ -27,5 +27,26 @@ int main()
 }
 void solve()
 {
-    cout << (499993 / 2);
+    int n;
+    cin >> n;
+    int a, res[n] = {0}, flag, k = 0;
+    for (int i = 0; i < 2 * n; i++)
+    {
+        cin >> a;
+        flag = 0;
+        for (int j = 0; j < n; j++)
+        {
+            if (res[j] == a)
+            {
+                flag = 1;
+                break;
+            }
+        }
+        if (!flag)
+            res[k++] = a;
+    }
+    for (int i = 0; i < n; i++)
+    {
+        cout << res[i] << " ";
+    }
 }

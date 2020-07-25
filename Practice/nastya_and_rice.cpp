@@ -15,7 +15,7 @@ int main()
 #endif
 
     int t = 1;
-    /*is Single Test case?*/ cin >> t;
+    cin >> t;
     while (t--)
     {
         solve();
@@ -27,5 +27,12 @@ int main()
 }
 void solve()
 {
-    cout << (499993 / 2);
+    int n, a, b, c, d;
+    cin >> n >> a >> b >> c >> d;
+    int grain_l = a - b, grain_h = a + b, tot_l = c - d, tot_h = c + d, x = grain_l;
+
+    if (n * grain_h < tot_l || n * grain_l > tot_h)
+        cout << "NO";
+    else
+        cout << "YES";
 }

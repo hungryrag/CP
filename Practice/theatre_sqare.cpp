@@ -15,7 +15,7 @@ int main()
 #endif
 
     int t = 1;
-    /*is Single Test case?*/ cin >> t;
+    //cin>>t;
     while (t--)
     {
         solve();
@@ -27,5 +27,19 @@ int main()
 }
 void solve()
 {
-    cout << (499993 / 2);
+    int n, m, a;
+    cin >> n >> m >> a;
+
+    unsigned long long int row, col;
+    if (n > a)
+        row = ceil(double(n) / a);
+    else
+        row = 1;
+    if (m > a)
+        col = ceil(double(m) / a);
+    else
+        col = 1;
+
+    // unsigned long long int ans = row * col;
+    cout << row * col;
 }

@@ -15,7 +15,7 @@ int main()
 #endif
 
     int t = 1;
-    /*is Single Test case?*/ cin >> t;
+    cin >> t;
     while (t--)
     {
         solve();
@@ -27,5 +27,27 @@ int main()
 }
 void solve()
 {
-    cout << (499993 / 2);
+    int n;
+    cin >> n;
+    int a[n];
+    for (int i = 0; i < n; i++)
+    {
+        cin >> a[i];
+    }
+    sort(a, a + n, greater<int>());
+    int max = a[0], flag = 0;
+    for (int i = 1; i < n; i++)
+    {
+        if ((max - a[i]) % 2 == 0)
+            continue;
+        else
+        {
+            flag = 1;
+            break;
+        }
+    }
+    if (flag)
+        cout << "NO";
+    else
+        cout << "YES";
 }

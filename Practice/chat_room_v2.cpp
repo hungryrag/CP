@@ -15,7 +15,7 @@ int main()
 #endif
 
     int t = 1;
-    /*is Single Test case?*/ cin >> t;
+    //cin>>t;
     while (t--)
     {
         solve();
@@ -27,5 +27,10 @@ int main()
 }
 void solve()
 {
-    cout << (499993 / 2);
+    char i{0}, c;
+    while (cin >> c && i != 5)
+    {
+        i += c == "hello"[i];
+    }
+    cout << ((i == 5) ? "YES" : "NO");
 }
